@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dice Throw Simulator</title>
+  <title>Online Dice Throw Simulator</title>
   <meta charset="utf-8">
-  <meta name="description" content="Dice Throw Simulator">
+  <meta name="description" content="Online Dice Throw Simulator">
   <meta name="author" content="F. Brummer">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,8 +32,8 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Dice Throw Simulator</h1>
-    <h2>A Flexible Simulator For Dice Throwing</h2>
+    <h1>Online Dice Throw Simulator</h1>
+    <h2>A Flexible Web Based Simulator For Dice Throwing</h2>
     <p>F. Brummer<br/>Senior Developer</p>
   </hgroup>
   <article></article>  
@@ -43,13 +43,15 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>When do you need dice?</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
+    <p>There&#39;s lots of everyday situations where the need for a set of dice can arise. For example:</p>
+
+<ol>
+<li>You want to play a quick game of Yahtzee.</li>
+<li>The rules of your favourite role playing game ask for some special 8 or more sided dice.</li>
+<li>For your statistics homework you need to roll some dice.</li>
 </ol>
 
   </article>
@@ -58,8 +60,72 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>What can you do about it?</h2>
   </hgroup>
+  <article data-timings="">
+    <h3>Always keep some spare dice in your pocket.</h3>
+
+<p>Seems reasonable at first look. But you know better. You tend to forget. Or simply change your trousers. Or - even worse - they could end up in the washing machine.</p>
+
+<h3>Install a Yahtzee app on your smartphone</h3>
+
+<p>Yeah, nice. But what about playing a different game? </p>
+
+<h3>Install a dice throwing sim on your smartphone</h3>
+
+<p>Good idea! But then you always forget your smartphone. And anyway you don&#39;t want to spend any more money on the app store.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Web Based Dice Simulator to the rescue!!1</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><strong>It&#39;s always available.</strong> You only need access to the web and voila! you got your dice simulation.</li>
+<li><strong>It&#39;s free.</strong> No hidden in app payments and the like!</li>
+<li><strong>It&#39;s flexible.</strong> Need 24 sided dice? Check. Need 10 of them? Check. All your dice throwing needs that could ever arise are taken care of!</li>
+<li><strong>It&#39;s fast and intuitive.</strong> The user interface is very straight forward. It&#39;s a breeze to select the desired dice set. And throwing the dice is almost instantanious.</li>
+</ul>
+
+<p>You can play around with the simulator at <a href="https://linuxfranz.shinyapps.io/my_product/">https://linuxfranz.shinyapps.io/my_product/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>How Does it Work?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>At the heart of the Simulator there is a relatively simple R function:</p>
+
+<pre><code class="r">throw_dice &lt;- function(sides, num_dice) {
+    dice &lt;- &quot;&quot;
+    for (i in sample(1:sides, num_dice, replace=T)) {
+        dice &lt;- paste(dice, sprintf(&quot;[ %s ]&quot;, i))
+    }
+    return (dice)
+}
+</code></pre>
+
+<p>Let&#39;s see this function in action by throwing 5 6-sided dice:</p>
+
+<pre><code class="r">throw_dice(6, 5)
+</code></pre>
+
+<pre><code>## [1] &quot; [ 5 ] [ 5 ] [ 4 ] [ 2 ] [ 4 ]&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
   <article data-timings="">
     
   </article>
@@ -72,14 +138,32 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='When do you need dice?'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='What can you do about it?'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Web Based Dice Simulator to the rescue!!1'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='How Does it Work?'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='NA'>
+         5
       </a>
     </li>
   </ul>
