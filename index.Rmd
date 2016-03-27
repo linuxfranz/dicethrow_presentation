@@ -64,7 +64,3 @@ Let's see this function in action by throwing 5 6-sided dice:
 ```{r}
 throw_dice(6, 5)
 ```
-
-
-
----
